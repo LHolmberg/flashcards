@@ -1,17 +1,22 @@
 <template>
-	<blog-post title="My journey with Vue"></blog-post>
+	<a @click="greet"> GREET </a>
 </template>
 
 <script>
-const Vue = window.vue;
-Vue.component("blog-post", {
-	props: ["title"],
-	template: "<h3>{{ title }}</h3>",
-});
 export default {
 	name: "Home",
 	props: {
 		msg: String,
+	},
+	methods: {
+		greet(event) {
+			// `this` inside methods points to the current active instance
+			alert("Hello " + this.name + "!");
+			// `event` is the native DOM event
+			if (event) {
+				alert(event.target.tagName);
+			}
+		},
 	},
 };
 </script>
