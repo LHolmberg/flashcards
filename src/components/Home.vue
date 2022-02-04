@@ -1,35 +1,17 @@
 <template>
-	<svg
-		class="editorial"
-		xmlns="http://www.w3.org/2000/svg"
-		xmlns:xlink="http://www.w3.org/1999/xlink"
-		viewBox="0 24 150 28 "
-		preserveAspectRatio="none"
-	>
-		<defs>
+	<div class="custom-shape-divider-top-1644017275">
+		<svg
+			data-name="Layer 1"
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 1200 120"
+			preserveAspectRatio="none"
+		>
 			<path
-				id="gentle-wave"
-				d="M-160 44c30 0 
-    58-18 88-18s
-    58 18 88 18 
-    58-18 88-18 
-    58 18 88 18
-    v44h-352z"
-			/>
-		</defs>
-		<g class="parallax1">
-			<use xlink:href="#gentle-wave" x="50" y="3" fill="#f461c1" />
-		</g>
-		<g class="parallax2">
-			<use xlink:href="#gentle-wave" x="50" y="0" fill="#4579e2" />
-		</g>
-		<g class="parallax3">
-			<use xlink:href="#gentle-wave" x="50" y="9" fill="#3461c1" />
-		</g>
-		<g class="parallax4">
-			<use xlink:href="#gentle-wave" x="50" y="6" fill="#fff" />
-		</g>
-	</svg>
+				d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+				class="shape-fill"
+			></path>
+		</svg>
+	</div>
 </template>
 
 <script>
@@ -47,79 +29,23 @@ export default {
 </script>
 
 <style scoped>
-body {
-	margin: 0;
-	padding: 0;
-	background-color: #03396c;
-}
-
-.editorial {
-	display: block;
-	width: 100%;
-	height: 60px;
-	max-height: 60px;
-	margin: 0;
-	z-index: 5;
-	bottom: 0;
+.custom-shape-divider-top-1644017275 {
 	position: absolute;
-	left: 0px;
-	float: left;
+	top: 0;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+	line-height: 0;
 }
 
-.parallax1 > use {
-	animation: move-forever1 10s linear infinite;
-	&:nth-child(1) {
-		animation-delay: -2s;
-	}
+.custom-shape-divider-top-1644017275 svg {
+	position: relative;
+	display: block;
+	width: calc(100% + 1.3px);
+	height: 150px;
 }
-.parallax2 > use {
-	animation: move-forever2 8s linear infinite;
-	&:nth-child(1) {
-		animation-delay: -2s;
-	}
-}
-.parallax3 > use {
-	animation: move-forever3 6s linear infinite;
-	&:nth-child(1) {
-		animation-delay: -2s;
-	}
-}
-.parallax4 > use {
-	animation: move-forever4 4s linear infinite;
-	&:nth-child(1) {
-		animation-delay: -2s;
-	}
-}
-@keyframes move-forever1 {
-	0% {
-		transform: translate(85px, 0%);
-	}
-	100% {
-		transform: translate(-90px, 0%);
-	}
-}
-@keyframes move-forever2 {
-	0% {
-		transform: translate(-90px, 0%);
-	}
-	100% {
-		transform: translate(85px, 0%);
-	}
-}
-@keyframes move-forever3 {
-	0% {
-		transform: translate(85px, 0%);
-	}
-	100% {
-		transform: translate(-90px, 0%);
-	}
-}
-@keyframes move-forever4 {
-	0% {
-		transform: translate(-90px, 0%);
-	}
-	100% {
-		transform: translate(85px, 0%);
-	}
+
+.custom-shape-divider-top-1644017275 .shape-fill {
+	fill: #ffffff;
 }
 </style>
