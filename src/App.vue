@@ -1,5 +1,5 @@
 <template>
-	<Home msg="Test"/>
+	<Home msg="t" />
 </template>
 
 <script>
