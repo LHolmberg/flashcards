@@ -1,38 +1,111 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+	outline: none;
+}
+body {
+	background: rgb(32, 32, 32);
+	background: linear-gradient(
+		90deg,
+		rgba(32, 32, 32, 1) 0%,
+		rgba(20, 20, 20, 1) 100%
+	);
+}
+.solver {
+	text-align: center;
+	font-family: "Quicksand", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.solver-header {
+	background-color: #222;
+	height: 40px;
+	padding: 10px;
+	color: rgb(71, 71, 71);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.solver-title {
+	font-size: 1.5em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.solver-intro {
+	font-size: large;
 }
 
-.App-link {
-  color: #61dafb;
+.solver-board-container {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 10px;
+	justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.solver-board {
+	padding: 10px;
+}
+
+.solver-buttons {
+	display: flex;
+	flex-direction: column;
+	margin: auto 15px;
+}
+
+.solver-button {
+	padding: 5px;
+}
+
+.solver-button button {
+	--color: #ffffff;
+	padding: 0.8em 1.7em;
+	background-color: transparent;
+	border-radius: 1em;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	transition: 0.5s;
+	font-weight: 400;
+	font-size: 14px;
+	border: 1px solid;
+	font-family: inherit;
+	text-transform: uppercase;
+	color: var(--color);
+	z-index: 1;
+}
+
+.solver-button button::before,
+.solver-button button::after {
+	content: "";
+	display: block;
+	width: 50px;
+	height: 50px;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	border-radius: 50%;
+	z-index: -1;
+	background-color: var(--color);
+	transition: 1s ease;
+}
+
+.solver-button button::before {
+	top: -1em;
+	left: -1em;
+}
+
+.solver-button button::after {
+	left: calc(100% + 1em);
+	top: calc(100% + 1em);
+}
+
+.solver-button button:hover::before,
+.solver-button button:hover::after {
+	height: 410px;
+	width: 410px;
+}
+
+.solver-button button:hover {
+	color: rgb(10, 25, 30);
+}
+
+.solver-button button:active {
+	filter: brightness(0.8);
 }

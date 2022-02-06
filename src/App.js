@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { Provider } from 'react-redux'
+import store from './store/store';
+import Sudoku from './components/Sudoku';
+import { solvePuzzle, clearPuzzles, randomizeBoard } from './actions/sudokuActions'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <div className="solver">
+          <div className="solver-buttons">
+              <div className="solver-button">
+                <button id="solve" onClick={() => store.dispatch(solvePuzzle())}>
+                  Solve
+                </button>
+                <button id="solve" onClick={() => store.dispatch(randomizeBoard())}>
+                  Randomize Board
+                </button>
+                <button id="clear" onClick={() => store.dispatch(clearPuzzles())}>
+                  Clear
+                </button>
+              </div>
+            </div>
+          <div className="solver-board-container">
+            <div className="solver-board">
+              <Sudoku title="Board" type="input" />
+            </div>
+            <div className="solver-board">
+              <Sudoku title="Solution" type="output" />
+            </div>
+          </div>
+        </div>
+      </Provider>
+    );
+  }
 }
 
 export default App;

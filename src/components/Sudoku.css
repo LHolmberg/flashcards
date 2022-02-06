@@ -1,0 +1,20 @@
+.sudoku {
+	display: flex;
+	flex-direction: column;
+	flex: 1 100%;
+}
+
+.sudoku-title {
+	color: white;
+	font-size: 1.6em;
+}
+
+.sudoku-row {
+	flex: 1;
+	display: flex;
+}
+
+.sudoku-box {
+	flex: 1;
+	border: 1px solid rgb(0, 0, 0);
+}
